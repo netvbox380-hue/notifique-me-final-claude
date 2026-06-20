@@ -14,7 +14,6 @@ import {
   Crown,
   Phone,
   ExternalLink,
-  Image as ImageIcon,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Button } from "./ui/button";
@@ -288,9 +287,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                 />
               ) : (
-                <div className="flex h-12 w-12 items-center justify-center rounded-md border-2 border-border bg-background">
-                  <ImageIcon className="h-5 w-5 text-muted-foreground" />
-                </div>
+                <img
+                  src="/icon-512.png"
+                  alt={brandName}
+                  className="h-12 w-12 rounded-md border-2 border-border object-cover bg-background"
+                />
               )}
               <div className="min-w-0">
                 <h1 className="truncate text-xl font-bold text-sidebar-foreground mono" style={brandPrimaryColor ? ({ color: brandPrimaryColor } as React.CSSProperties) : undefined}>
@@ -364,7 +365,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 className="h-8 w-8 rounded-md border border-border object-cover bg-background"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
               />
-            ) : null}
+            ) : (
+              <img
+                src="/icon-512.png"
+                alt={brandName}
+                className="h-8 w-8 rounded-md border border-border object-cover bg-background"
+              />
+            )}
             <div className="min-w-0">
               <div className="truncate text-sm font-bold" style={brandPrimaryColor ? ({ color: brandPrimaryColor } as React.CSSProperties) : undefined}>{brandName}</div>
               <div className="text-[11px] text-muted-foreground truncate">
