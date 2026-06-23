@@ -8,6 +8,7 @@ import { useAuth } from "./contexts/AuthContext";
 
 import Login from "./pages/Login";
 import Privacy from "./pages/Privacy";
+import AccountDeletion from "./pages/AccountDeletion";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Groups from "./pages/Groups";
@@ -137,6 +138,7 @@ export default function App() {
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/privacy" component={Privacy} />
+            <Route path="/account-deletion" component={AccountDeletion} />
 
             {/* USER */}
             <Route
